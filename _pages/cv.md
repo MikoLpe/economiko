@@ -42,7 +42,7 @@ Work experience
 Skills
 ======
 * Languages: Finnish (Native), English (C2), French (C1), Swedish (~B2)
-* Programming: Stata, R, QGIS, Latex, Git(hub), and very little Python + ChatGPT
+* Programming: Stata, R, QGIS, Latex, Git(hub), and a little Python
 
 
 <!-- Comment this out for now until add pubs and "talks"
