@@ -12,9 +12,9 @@ title                    : "Miko Lepistö"
 title_separator          : "-"
 name                     : &name "Miko Lepistö"
 description              : &description "personal description"
-url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "academicpages/academicpages.github.io"
+url                      : https://mikolpe.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+baseurl                  : "/economiko" # the subpath of your site, e.g. "/blog"
+repository               : "MikoLpe/economiko"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
@@ -24,9 +24,9 @@ author:
   avatar           : "Miko_portrait_cropped.jpg"
   name             : "Miko Lepistö"
   pronouns         : "he/his" 
-  bio              : "Short biography for the left-hand sidebar"
+  bio              : "1st year PhD student"
   location         : "Paris"
-  employer         : "Paris School of Economics / Université Paris 1 Panthéon-Sorbonne"
+  employer         : "Paris School of Economics / Paris 1"
   uri              : # URL
   email            : "miko.lepisto@psemail.eu" 
 
@@ -57,7 +57,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : "miko-lepisto"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
