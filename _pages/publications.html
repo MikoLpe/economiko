@@ -1,36 +1,113 @@
 ---
 layout: archive
-title: "Publications"
-permalink: /publications/
-author_profile: true
+title: "Research"
+permalink: /research/
 ---
-
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
 
 {% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
+{% assign all_pubs = site.publications | sort: "date" | reverse %}
+
+{% for category in site.publication_category %}
+  {% assign cat_key = category[0] %}
+  {% assign cat_info = category[1] %}
+  {% assign cat_pubs = all_pubs | where: "category", cat_key %}
+
+  {% if cat_pubs.size > 0 %}
+    <h2>{{ cat_info.title }}</h2>
+    <hr style="border: none; border-top: 1px solid #ccc; margin-top: -0.5em; margin-bottom: 1.5em;" />
+
+    {% for pub in cat_pubs %}
+      <div class="publication-entry" style="margin-bottom: 2em; padding-bottom: 1.5em;">
+
+	<h3>{{ forloop.index }}. {{ pub.title }}</h3>
+
+
+        {% if pub.coauthors %}
+          <p><strong>With:</strong>
+            {% for author in pub.coauthors %}
+              {% if author.url %}
+                <a href="{{ author.url }}">{{ author.name }}</a>
+              {% else %}
+                {{ author.name }}
+              {% endif %}
+              {% unless forloop.last %}, {% endunless %}
+            {% endfor %}
+          </p>
+        {% endif %}
+        
+	{% if pub.abstract %}
+	  <div class="abstract-toggle">
+	    <p>
+	      <a href="javascript:void(0);" onclick="toggleAbstract('{{ pub.slug | default: pub.title | slugify }}')"
+		 style="color: #0066cc; text-decoration: underline;">
+		Abstract <span id="toggle-label-{{ pub.slug | default: pub.title | slugify }}">(click to expand)</span>
+	      </a>
+	    </p>
+	    <div id="abstract-{{ pub.slug | default: pub.title | slugify }}" class="abstract-content" style="display: none; margin-top: 0.5em;">
+	      {{ pub.abstract | markdownify }}
+	    </div>
+	  </div>
+	{% endif %}
+
+        {% if pub.pubdetails %}
+          <p>
+            {% for pubdetail in pub.pubdetails %}
+              {% if pubdetail.url %}
+                <a href="{{ pubdetail.url }}">{{ pubdetail.name }}</a>
+              {% else %}
+                {{ pubdetail.name }}
+              {% endif %}
+              {% if pubdetail.date %}, {{ pubdetail.date | date: "%d.%m.%Y" }}{% endif %}
+              {% unless forloop.last %}<br/>{% endunless %}
+            {% endfor %}
+          </p>
+        {% endif %}
+
+        {% if pub.paperurl %}
+          <p style="font-size: smaller;"><a href="{{ pub.paperurl }}">Download Paper</a></p>
+        {% endif %}
+
+        {% if pub.slides_url %}
+          <p style="font-size: smaller;"><a href="{{ pub.slides_url }}">Slides</a></p>
+        {% endif %}
+
+        {% if pub.press_coverage %}
+          <p style="font-size: smaller">
+            <strong>Press coverage:</strong><br/>
+            {% for press in pub.press_coverage %}
+              {% if press.url %}
+                <a href="{{ press.url }}">{{ press.name }}</a>
+              {% else %}
+                {{ press.name }}
+              {% endif %}
+              {% if press.date %}, {{ press.date | date: "%d.%m.%Y" }}{% endif %}
+              {% unless forloop.last %}<br/>{% endunless %}
+            {% endfor %}
+          </p>
+        {% endif %}
+
+	{% if page.comments and page.comments != true and page.comments != "true" and page.comments != "" %}
+          <p style="font-size: smaller;">{{ pub.comments | markdownify }}</p>
+        {% endif %}
+
+      </div>
     {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+  {% endif %}
+{% endfor %}
 
+<script>
+  function toggleAbstract(id) {
+    const content = document.getElementById("abstract-" + id);
+    const label = document.getElementById("toggle-label-" + id);
 
+    if (content.style.display === "none") {
+      content.style.display = "block";
+      label.textContent = "(click to collapse)";
+    } else {
+      content.style.display = "none";
+      label.textContent = "(click to expand)";
+    }
+  }
+</script>
 
