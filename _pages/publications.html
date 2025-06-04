@@ -49,19 +49,18 @@ permalink: /research/
 	  </div>
 	{% endif %}
 
-        {% if pub.pubdetails %}
-          <p>
-            {% for pubdetail in pub.pubdetails %}
-              {% if pubdetail.url %}
-                <a href="{{ pubdetail.url }}">{{ pubdetail.name }}</a>
-              {% else %}
-                {{ pubdetail.name }}
-              {% endif %}
-              {% if pubdetail.date %}{{ "," }} {{ pubdetail.date | date: "%d.%m.%Y" }}{% endif %}
-              {% unless forloop.last %}<br/>{% endunless %}
-            {% endfor %}
-          </p>
-        {% endif %}
+	{% if pub.pubdetails %}
+	  <p>
+	    {% for pubdetail in pub.pubdetails %}
+	      {% if pubdetail.url %}
+		<a href="{{ pubdetail.url }}">{{ pubdetail.name }}</a>{% if pubdetail.date %}{{ "," }} {{ pubdetail.date | date: "%d.%m.%Y" }}{% endif %}
+	      {% else %}
+		{{ pubdetail.name }}{% if pubdetail.date %}, {{ pubdetail.date | date: "%d.%m.%Y" }}{% endif %}
+	      {% endif %}
+	      {% unless forloop.last %}<br/>{% endunless %}
+	    {% endfor %}
+	  </p>
+	{% endif %}
 
         {% if pub.slides_url %}
           <p style="font-size: smaller;"><a href="{{ pub.slides_url }}">Slides</a></p>
@@ -76,7 +75,7 @@ permalink: /research/
               {% else %}
                 {{ press.name }}
               {% endif %}
-              {% if press.date %}, {{ press.date | date: "%d.%m.%Y" }}{% endif %}
+              {% if press.date %}{{ "," }} {{ press.date | date: "%d.%m.%Y" }}{% endif %}
               {% unless forloop.last %}<br/>{% endunless %}
             {% endfor %}
           </p>

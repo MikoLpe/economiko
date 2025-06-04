@@ -5,8 +5,28 @@ permalink: /teaching/
 author_profile: true
 ---
 
-{% include base_path %}
+{% assign season_order = "winter,spring,summer,fall" | split: "," %}
+{% assign processed_classes = "" | split: "" %}
 
-{% for post in site.teaching reversed %}
-  {% include class.html %}
+{% for post in site.teaching %}
+  {% assign sem_parts = post.semester | split: " " %}
+  {% assign year = sem_parts[0] | split: "-" | first %}
+  {% assign sem = sem_parts[1] %}
+  {% assign season_index = season_order | index: sem %}
+  {% capture sort_key %}{{ year }}{{ season_index }}{% endcapture %}
+  {% assign post = post | merge: { "sort_key": sort_key } %}
+  {% assign processed_classes = processed_classes | push: post %}
 {% endfor %}
+
+{% assign sorted_classes = processed_classes | sort: "sort_key" | reverse %}
+
+<div class="page__content">
+  {% for course in sorted_classes %}
+<p>
+  {{ course.title }}, {{ course.venue }} ({{ course.semester }})<br/>
+  {% if course.content %}
+  &emsp;<em>{{ course.content | strip_html | strip_newlines }}</em><br/>
+  {% endif %}
+</p>
+  {% endfor %}
+</div>

@@ -8,4 +8,4 @@ semester: "2024-2025 spring"
 location: "Paris, France"
 ---
 
-Review (5/5, N = 2/5)
+Student evaluation of teaching: 5/5 (N = 2/5)
