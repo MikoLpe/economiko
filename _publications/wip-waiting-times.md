@@ -4,8 +4,8 @@ collection: publications
 category: wip
 permalink: /publication/wip-waiting-times.md
 pubdetails:
-  - name: "Draft"
-    url: "https://shs.hal.science/halshs-04886097v1"
+  - name: "Draft (Coming soon!)"
+    #url: "https://shs.hal.science/halshs-04886097v1"
     #date: 2025-01-14
 coauthors:
   - name: "Hanna Pesola"
