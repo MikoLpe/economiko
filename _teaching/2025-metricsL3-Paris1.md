@@ -4,7 +4,7 @@ collection: teaching
 type: "Undergraduate course"
 permalink: /teaching/2025-metricsL3-Paris1.md
 venue: "Unversité Paris 1 Panthéon-Sorbonne"
-date: "2024-2025 spring"
+semester: "2024-2025 spring"
 location: "Paris, France"
 ---
 
