@@ -25,4 +25,5 @@ abstract: >
 #    date: 2025-04-01
 #slides_url: "https://example.com/slides.pdf"
 comments: "Collecting additional data."
+last_modified_at: 2025-06-04
 ---
