@@ -25,14 +25,13 @@ permalink: /research/
 
         {% if pub.coauthors %}
           <p><strong>With:</strong>
-            {% for author in pub.coauthors %}
-              {% if author.url %}
-                <a href="{{ author.url }}">{{ author.name }}</a>
-              {% else %}
-                {{ author.name }}
-              {% endif %}
-              {% unless forloop.last %}, {% endunless %}
-            {% endfor %}
+           {{% for author in pub.coauthors %}
+		{% if author.url %}
+		 <a href="{{ author.url }}">{{ author.name }}</a>{% unless forloop.last %},{% endunless %}
+	 	{% else %}
+	    	{{ author.name }}{% unless forloop.last %},{% endunless %}
+	  	{% endif %}
+	{% endfor %}
           </p>
         {% endif %}
         
@@ -58,14 +57,10 @@ permalink: /research/
               {% else %}
                 {{ pubdetail.name }}
               {% endif %}
-              {% if pubdetail.date %}, {{ pubdetail.date | date: "%d.%m.%Y" }}{% endif %}
+              {% if pubdetail.date %}{{ "," }} {{ pubdetail.date | date: "%d.%m.%Y" }}{% endif %}
               {% unless forloop.last %}<br/>{% endunless %}
             {% endfor %}
           </p>
-        {% endif %}
-
-        {% if pub.paperurl %}
-          <p style="font-size: smaller;"><a href="{{ pub.paperurl }}">Download Paper</a></p>
         {% endif %}
 
         {% if pub.slides_url %}
