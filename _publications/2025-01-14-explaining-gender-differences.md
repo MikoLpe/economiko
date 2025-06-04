@@ -2,7 +2,7 @@
 title: "Explaining gender differences in migration sorting: Evidence from Canada-US migration"
 collection: publications
 category: wip
-permalink: /publication/2024-02-17-paper-title-number-4
+permalink: /publication/2024-01-14-explaining-gender-differences/
 pubdetails:
   - name: "PSE Working Paper No. 2025-04"
     url: "https://shs.hal.science/halshs-04886097v1"

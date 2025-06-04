@@ -2,7 +2,7 @@
 title: "Waiting Times and Refugee Integration"
 collection: publications
 category: wip
-permalink: /publication/wip-waiting-times.md
+permalink: /publication/wip-waiting-times/
 pubdetails:
   - name: "Draft (Coming soon!)"
     #url: "https://shs.hal.science/halshs-04886097v1"
