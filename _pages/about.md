@@ -9,7 +9,7 @@ redirect_from:
 
 Hello there, and welcome to my website! 
 
-I'm a first-year PhD student at the Paris School of Economics, writing a thesis entitled "Essays on Migration". Accordingly, my main field is migration with wide-ranging within-subject interests. I am particularly interested in immigrant integration in rich countries, but I have a strong penchant for historical migration and political economy too.
+I'm a second-year PhD student at the Paris School of Economics, writing a thesis entitled "Essays on Migration". Accordingly, my main field is migration with wide-ranging within-subject interests. I am particularly interested in immigrant integration in rich countries, but I have a strong penchant for historical migration and political economy too.
 
 In the academic year 2025-2026 I will be co-organizing the [Applied Economics Lunch Seminar](https://www.parisschoolofeconomics.eu/en/events/applied-economics-lunch/). Feel free to contact me, [Marta Pinzan](https://www.parisschoolofeconomics.eu/en/persons/marta-pinzan/), or [Louis Margolis](https://www.parisschoolofeconomics.eu/en/persons/louis-margolis/) for any inquiries.
 
